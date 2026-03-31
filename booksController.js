@@ -22,10 +22,11 @@ export const getBookByIdHandler = (req, res) => {
 
 export const addNewBookHandler = (req, res) => {
     // streaming data
-    let body = ''
-    req.on('data', (chunk) => body += chunk)
+    const chunks = []
+    req.on('data', (chunk) => chunks.push(chunk)) // store buffers
     // when all chunks arrive
     req.on('end', () => {
+        const body = Buffer.concat(chunks).toString()
         const newBook = JSON.parse(body)
         const requiredFields = ['title', 'pagesCount', 'author', 'released', 'genre', 'status']
         const missingFields = requiredFields.filter(field => !(field in newBook))
@@ -46,13 +47,16 @@ export const addNewBookHandler = (req, res) => {
 
 export const updateBookHandler = (req, res) => {
     // streaming data
-    let body = ''
-    req.on('data', (chunk) => body += chunk)
+    const chunks = []
+    req.on('data', (chunk) => chunks.push(chunk)) // store buffers
 
     // when all chunks arrive
     req.on('end', () => {
         // get book id to update
         const bookId = parseInt(req.url.split('/')[3])
+
+        // get new fields
+        const body = Buffer.concat(chunks).toString()
 
         // get old book fiels
         let book = books.find(book => book.id === bookId)
