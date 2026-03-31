@@ -1,0 +1,34 @@
+### Get all books
+GET http://localhost:1300/api/books HTTP/1.1
+
+### Get a single book by id
+GET http://localhost:1300/api/books/2 HTTP/1.1
+
+### Create a new book
+POST http://localhost:1300/api/books HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "The Catcher in the Rye",
+    "pagesCount": 234,
+    "author": "J.D. Salinger",
+    "released": 1951,
+    "genre": "Fiction",
+    "status": "available"
+}
+
+### Update a book by id
+PUT http://localhost:1300/api/books/3 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "The Great Gatsby",
+    "pagesCount": 180,
+    "author": "F. Scott Fitzgerald",
+    "released": 1925,
+    "genre": "Classic",
+    "status": "not available"
+}
+
+### Delete a book by id
+DELETE http://localhost:1300/api/books/4 HTTP/1.1
