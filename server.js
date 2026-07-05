@@ -1,8 +1,8 @@
 import http from 'http'
 import { books } from './books.js'
 // middlewares
-import { loggerMiddleware } from './middlewares/loggerMiddleware.js'
-import { jsonMiddleware } from './middlewares/jsonMiddleware.js'
+import { loggerMiddleware } from './src/middlewares/loggerMiddleware.js'
+import { jsonMiddleware } from './src/middlewares/jsonMiddleware.js'
 // controllers
 import { 
     getAllBooksHandler, 
