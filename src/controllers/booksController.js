@@ -1,4 +1,4 @@
-import { books } from "./books.js"
+import { books } from "../books.js"
 
 export const getAllBooksHandler = (req, res) => {
     // respond with all books

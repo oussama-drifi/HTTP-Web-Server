@@ -9,7 +9,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oussama-drifi/HTTP-Web-Server"
+    "url": "https://github.com/oussama-drifi/Simple-NodeJS-Web-Server"
   },
   "author": "oussama drifi",
   "license": "ISC",

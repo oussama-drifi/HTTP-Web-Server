@@ -1,16 +1,15 @@
 import http from 'http'
-import { books } from './books.js'
 // middlewares
 import { loggerMiddleware } from './src/middlewares/loggerMiddleware.js'
 import { jsonMiddleware } from './src/middlewares/jsonMiddleware.js'
-// controllers
+// books controller handlers
 import { 
     getAllBooksHandler, 
     getBookByIdHandler, 
     addNewBookHandler,
     updateBookHandler,
     deleteBookHandler
-    } from './booksController.js'
+    } from './src/controllers/booksController.js'
 
 
 const PORT = process.env.PORT
